@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.example.regservicebuilder.model.District" />
+	<import class="com.example.regservicebuilder.model.Farmer" />
+	<class name="com.example.regservicebuilder.model.impl.DistrictImpl" table="Regs_District">
+		<cache usage="read-write" />
+		<id name="districtId" type="long">
+			<generator class="sequence">
+				<param name="sequence">id_sequence</param>
+			</generator>
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="archived" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.example.regservicebuilder.model.impl.FarmerImpl" table="Regs_Farmer">
+		<cache usage="read-write" />
+		<id name="farmerId" type="long">
+			<generator class="sequence">
+				<param name="sequence">id_sequence</param>
+			</generator>
+		</id>
+		<property name="organizationName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="legalForm" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="inn" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="kpp" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ogrn" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="districtId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="registrationDate" type="org.hibernate.type.TimestampType" />
+		<property name="archived" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

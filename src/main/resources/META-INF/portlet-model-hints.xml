@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.example.regservicebuilder.model.District">
+		<field name="districtId" type="long" />
+		<field name="name" type="String" />
+		<field name="code" type="String" />
+		<field name="archived" type="String" />
+	</model>
+	<model name="com.example.regservicebuilder.model.Farmer">
+		<field name="farmerId" type="long" />
+		<field name="organizationName" type="String" />
+		<field name="legalForm" type="String" />
+		<field name="inn" type="String" />
+		<field name="kpp" type="String" />
+		<field name="ogrn" type="String" />
+		<field name="districtId" type="long" />
+		<field name="registrationDate" type="Date" />
+		<field name="archived" type="String" />
+	</model>
+</model-hints>

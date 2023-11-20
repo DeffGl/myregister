@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0 !important;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.container select {
+    width: 200px;
+    margin: 0 10px;
+}
+
+.container button {
+    margin-bottom: 5px;
+}

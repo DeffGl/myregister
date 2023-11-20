@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.example.regservicebuilder">
+    <namespace>Regs</namespace>
+
+    <entity name="District" local-service="true">
+        <column name="districtId" type="long" primary="true" id-type="sequence"
+                id-param="id_sequence"/>
+        <column name="name" type="String"/>
+        <column name="code" type="String" />
+        <column name="archived" type="String"/>
+        <column name="farmers" type="Collection" entity="Farmer" mapping-table="Regs_Farmer_Districts"/>
+
+        <finder name="Archive" return-type="Collection">
+            <finder-column name="archived"/>
+        </finder>
+    </entity>
+
+
+    <entity name="Farmer" local-service="true">
+        <column name="farmerId" type="long" primary="true" id-type="sequence"
+                id-param="id_sequence"/>
+        <column name="organizationName" type="String"/>
+        <column name="legalForm" type="String"/>
+        <column name="inn" type="String"/>
+        <column name="kpp" type="String" />
+        <column name="ogrn" type="String" />
+        <column name="districtId" type="long"/>
+        <column name="districts" type="Collection" entity="District" mapping-table="Regs_Farmer_Districts"/>
+        <column name="registrationDate" type="Date"/>
+        <column name="archived" type="String"/>
+    </entity>
+</service-builder>
